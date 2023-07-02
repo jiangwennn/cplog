@@ -1,0 +1,12 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义基础样式，或覆盖 */
+@layer base {
+    /* tailwind默认svg是block元素，导致icon-park的图标无法对齐，icon-park图标是svg外面套span，坑！ */
+    svg {
+        @apply inline;
+    }
+}
