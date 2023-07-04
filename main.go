@@ -25,6 +25,8 @@ func main() {
 			Assets: assets,
 		},
 		Mac: &mac.Options{
+			WindowIsTranslucent: true,
+			WebviewIsTransparent: true,
 			TitleBar: mac.TitleBarHiddenInset(),
 			About: &mac.AboutInfo{
 				Title: "cplog",

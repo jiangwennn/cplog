@@ -2,12 +2,12 @@
 
 <!-- 侧边栏 -->
 <template>
-  <div class="w-full flex h-screen bg-gray-100 font-mono">
+  <div class="w-full flex h-screen font-mono">
       <!-- 左侧导航列表 -->
-      <div class="h-full flex-none w-20 pt-8 bg-gray-100" style="--wails-draggable:drag">
+      <div class="h-full flex-none w-20 pt-8 bg-white bg-opacity-5 select-none" style="--wails-draggable:drag">
           <ul class="list-none mt-6" style="--wails-draggable:no-drag">
               <li v-for="item in topNav" class="h-20 w-full">
-                  <router-link :to="{name: item.path }" class="block w-full relative top-3 cursor-pointer" @click="clickNav(item)">
+                  <router-link :to="{name: item.path }" class="block w-full relative top-3" @click="clickNav(item)">
                       <icon class="block w-full text-center">
                         <component :is="item.elem" size="32" :theme="item.theme" :fill="item.fill" :strokeWidth="2" />
                       </icon>
