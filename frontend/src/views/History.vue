@@ -12,14 +12,19 @@
                     </div>
                 </div>
                 <div class="overflow-y-auto h-full">
-                    <div v-for="item in listData" class="w-full h-24 pt-2 pb-2 border-b border-neutral-100 text-xs active:bg-neutral-50">
-                        <div class="relative w-full h-11 text-neutral-600 p-3 box-border line-clamp-2 ">
-                            {{ item.content }}
+                    <div v-for="item in listData" class="w-full h-24 border-b border-neutral-100 text-xs active:bg-neutral-50">
+                        <div class="relative top-4 w-11/12 mx-auto h-8 text-neutral-600 box-border flex">
+                            <span class="basis-10/12 line-clamp-2">
+                                {{ item.content }}
+                            </span>
+                            <icon class="basis-2/12 w-full">
+                                <IconLike class="w-full h-full text-center flex items-center justify-center" size="16" stroke-width="1"  />
+                            </icon>
                         </div>
-                        <div class="relative w-full h-4 flex p-3 pb-0">
-                            <span class="basis-1/2 text-neutral-400 text-xs"> {{ item.time }}</span>
-                            <icon class="basis-1/2 flex items-center">
-                                <IconLike class="basis-1/2 flex-none" />
+                        <div class="relative top-8 w-11/12 mx-auto h-4 flex">
+                            <span class="w-full h-full basis-3/4 text-neutral-400 text-xs"> {{ item.time }}</span>
+                            <icon class="basis-1/4 flex justify-end">
+                                
                             </icon>
                         </div>
                     </div>
@@ -27,9 +32,9 @@
             </div>
         </div>
         <!-- 右侧详情 -->
-        <div class="h-full flex-auto bg-gray-100 pl-4" style="--wails-draggable:drag">
+        <div class="h-full flex-auto">
             <!-- 主页介绍 -->
-            <About class="h-full mx-auto w-full select-none"></About>
+            <About style="--wails-draggable:drag" class="bg-gray-100 h-full mx-auto w-full select-none"></About>
         </div>
     </div>
 </template>
@@ -40,6 +45,8 @@ import {
   Plus as IconPlus,
   Search as IconSearch,
   Like as IconLike,
+  Delete as IconDelete,
+  Close as IconClose,
 } from '@icon-park/vue-next';
 
 let listData = [
