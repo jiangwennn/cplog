@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"os/user"
 )
 
 // App struct
@@ -19,6 +20,15 @@ func NewApp() *App {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+}
+
+func (* App) storeDir() string {
+	dirName := ".cplog/"
+	u, err := user.Current()
+	if err != nil {
+		return dirName
+	}
+	return u.HomeDir + "/" + dirName 
 }
 
 // Greet returns a greeting for the given name
